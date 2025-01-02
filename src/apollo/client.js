@@ -6,39 +6,43 @@ const SUBGRAPH_API_KEY = process.env.REACT_APP_THE_GRAPH_API_KEY
 
 export const client = new ApolloClient({
   link: new HttpLink({
+    // uri: ` http://localhost:8000/subgraphs/name/uniswap-v2`
     uri: `https://gateway.thegraph.com/api/${SUBGRAPH_API_KEY}/subgraphs/id/EYCKATKGBKLWvSfwvBjzfCBmGwYNdVkduYXVivCsLRFu`,
+
   }),
   cache: new InMemoryCache(),
-  shouldBatch: true,
+  shouldBatch: true
 })
 
 export const healthClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/index-node/graphql',
+    uri: 'https://api.thegraph.com/index-node/graphql'
   }),
   cache: new InMemoryCache(),
-  shouldBatch: true,
+  shouldBatch: true
 })
 
 export const v1Client = new ApolloClient({
   link: new HttpLink({
-    uri: `https://gateway.thegraph.com/api/${SUBGRAPH_API_KEY}/subgraphs/id/ESnjgAG9NjfmHypk4Huu4PVvz55fUwpyrRqHF21thoLJ`,
+    uri: `https://gateway.thegraph.com/api/${SUBGRAPH_API_KEY}/subgraphs/id/ESnjgAG9NjfmHypk4Huu4PVvz55fUwpyrRqHF21thoLJ`
   }),
   cache: new InMemoryCache(),
-  shouldBatch: true,
+  shouldBatch: true
 })
 
 export const stakingClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/way2rach/talisman',
+    uri: 'https://api.thegraph.com/subgraphs/name/way2rach/talisman'
   }),
   cache: new InMemoryCache(),
-  shouldBatch: true,
+  shouldBatch: true
 })
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
+    // uri: `http://localhost:8000/subgraphs/name/eth-blocks`
     uri: `https://gateway.thegraph.com/api/${SUBGRAPH_API_KEY}/subgraphs/id/9A6bkprqEG2XsZUYJ5B2XXp6ymz9fNcn4tVPxMWDztYC`,
+
   }),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache()
 })
